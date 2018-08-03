@@ -89,8 +89,8 @@ using Com.Webengage.Sdk.Android;
 using Java.Lang;
 ...
 
-	// Set custom user attribute
-	WebEngage.Get().User().SetAttribute("age", (Java.Lang.Integer)23);
+    // Set custom user attribute
+    WebEngage.Get().User().SetAttribute("age", (Java.Lang.Integer)23);
     WebEngage.Get().User().SetAttribute("premium", (Boolean)true);
 
     // Set complex custom user attributes
@@ -122,11 +122,11 @@ using Com.Webengage.Sdk.Android;
 using Java.Lang;
 ...
 	
-	// Track events
-	WebEngage.Get().Analytics().Track(eventName);
+    // Track events
+    WebEngage.Get().Analytics().Track(eventName);
 
-	// Track events with attributes
-	IDictionary<string, Object> attributes = new Dictionary<string, Object>();
+    // Track events with attributes
+    IDictionary<string, Object> attributes = new Dictionary<string, Object>();
     attributes.Add("id", "~123");
     attributes.Add("price", 100);
     attributes.Add("discount", true);
@@ -155,7 +155,7 @@ using Java.Lang;
         {
             base.OnStart();
 
-			// Track screen data
+	    // Track screen data
             IDictionary<string, Object> attributes = new Dictionary<string, Object>();
             attributes.Add("name", "Home");
             attributes.Add("launcher", true);
