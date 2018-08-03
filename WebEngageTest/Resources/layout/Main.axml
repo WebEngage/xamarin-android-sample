@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="25dp">
+    <EditText
+        android:id="@+id/userIdEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User ID"
+        android:textColorHint="@android:color/darker_gray"
+        android:textColor="@android:color/black" />
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DDDDDD"
+        android:text="LOGIN"
+        android:layout_marginBottom="25dp" />
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:textColorHint="@android:color/darker_gray"
+        android:textColor="@android:color/black" />
+    <Button
+        android:id="@+id/emailButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DDDDDD"
+        android:text="SET EMAIL"
+        android:layout_marginBottom="25dp" />
+    <Spinner
+        android:id="@+id/genderSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffFFFFFF"
+        android:layout_marginBottom="10dp" />
+    <Button
+        android:id="@+id/genderButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DDDDDD"
+        android:text="SET GENDER"
+        android:layout_marginBottom="25dp" />
+    <EditText
+        android:id="@+id/eventEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event"
+        android:textColorHint="@android:color/darker_gray"
+        android:textColor="@android:color/black" />
+    <Button
+        android:id="@+id/trackButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DDDDDD"
+        android:text="TRACK"
+        android:layout_marginBottom="25dp" />
+</LinearLayout>
