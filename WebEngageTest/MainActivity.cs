@@ -8,6 +8,7 @@ using Com.Webengage.Sdk.Android.Utils;
 using Android.Content;
 using System.Collections.Generic;
 using Java.Lang;
+using Java.Util;
 
 namespace WebEngageTest
 {
@@ -106,16 +107,20 @@ namespace WebEngageTest
             //WebEngage.Get().User().SetBirthDate("01-01-2001");
             //WebEngage.Get().User().SetFirstName("John");
             //WebEngage.Get().User().SetLastName("Doe");
+            //WebEngage.Get().User().SetCompany("WebEngage");
 
 
             // Custom user attributes
-            //Number age = (Java.Lang.Integer)23;
-            //WebEngage.Get().User().SetAttribute("age", age);
+            //WebEngage.Get().User().SetAttribute("age", (Java.Lang.Integer)23);
+            //WebEngage.Get().User().SetAttribute("premium", (Boolean)true);
+            //WebEngage.Get().User().SetAttribute("last_seen", new Date("12-12-2019"));
 
             //IDictionary<string, Object> customAttributes = new Dictionary<string, Object>();
             //customAttributes.Add("Twitter Email", "john.twitter@mail.com");
             //customAttributes.Add("Subscribed", true);
             //WebEngage.Get().User().SetAttributes(customAttributes);
+
+            //WebEngage.Get().User().DeleteAttribute("age");
 
 
             // Event
@@ -130,7 +135,7 @@ namespace WebEngageTest
                 attributes.Add("id", "~123");
                 attributes.Add("price", 100);
                 attributes.Add("discount", true);
-                WebEngage.Get().Analytics().Track(eventName, attributes);
+                WebEngage.Get().Analytics().Track(eventName, attributes, new Analytics.Options().SetHighReportingPriority(false));
 
                 Toast.MakeText(this.BaseContext, "Event tracked successfully", ToastLength.Long).Show();
             };
