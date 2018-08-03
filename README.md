@@ -28,7 +28,7 @@ using Com.Webengage.Sdk.Android;
             base.OnCreate();
 
             WebEngageConfig config = new WebEngageConfig.Builder()
-                                                        .SetWebEngageKey("YOUR-LICENSE-CODE")
+                                                        .SetWebEngageKey(YOUR-LICENSE-CODE)
                                                         .SetDebugMode(true)
                                                         .Build();
             RegisterActivityLifecycleCallbacks(new WebEngageActivityLifeCycleCallbacks(this, config));
