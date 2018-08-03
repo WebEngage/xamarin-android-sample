@@ -235,7 +235,10 @@ using Com.Webengage.Sdk.Android;
         public override void OnMessageReceived(RemoteMessage message)
         {
             base.OnMessageReceived(message);
-            WebEngage.Get().Receive(message.Data);
+            IDictionary<string, string> data = message.Data;
+            if (data.ContainsKey("source") && "webengage".Equals(data["source"])) {
+                WebEngage.Get().Receive(data);
+            }
         }
     }
 
