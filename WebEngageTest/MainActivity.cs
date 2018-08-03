@@ -26,7 +26,7 @@ namespace WebEngageTest
             ISharedPreferences prefs = Application.Context.GetSharedPreferences("TEST_PREF", FileCreationMode.Private);
 
 
-            // User
+            // User login
             EditText userIdEditText = FindViewById<EditText>(Resource.Id.userIdEditText);
             userId = prefs.GetString("userid", "");
             userIdEditText.Text = userId;
