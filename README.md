@@ -18,7 +18,7 @@ Initialize WebEngage SDK with your license code from onCreate callback of your A
 using Com.Webengage.Sdk.Android;
 ...
 
-	[Application]
+    [Application]
     public class YourApplication : Application
     {
     	...
@@ -122,11 +122,11 @@ using Com.Webengage.Sdk.Android;
 using Java.Lang;
 ...
 	
-	// Track simple event
+    // Track simple event
     WebEngage.Get().Analytics().Track("Searched");
 
-	// Track event with attributes
-	IDictionary<string, Object> attributes = new Dictionary<string, Object>();
+    // Track event with attributes
+    IDictionary<string, Object> attributes = new Dictionary<string, Object>();
     attributes.Add("id", "~123");
     attributes.Add("price", 100);
     attributes.Add("discount", true);
@@ -148,7 +148,7 @@ using Com.Webengage.Sdk.Android;
 using Java.Lang;
 ...
 
-	public class YourActivity : Activity
+    public class YourActivity : Activity
     {
     	...
     	protected override void OnStart()
@@ -177,7 +177,7 @@ using Firebase.Iid;
 using Com.Webengage.Sdk.Android;
 ...
 
-	[Service]
+    [Service]
     [IntentFilter(new[] {
         "com.google.firebase.INSTANCE_ID_EVENT"
     })]
@@ -204,7 +204,7 @@ using Firebase.Iid;
 using Com.Webengage.Sdk.Android;
 ...
 	
-	[Application]
+    [Application]
     public class YourApplication : Application
     {
         ...
@@ -226,7 +226,7 @@ using Com.Webengage.Sdk.Android;
 using Com.Webengage.Sdk.Android;
 ...
 
-	[Service]  
+    [Service]  
     [IntentFilter(new[] {
         "com.google.firebase.MESSAGING_EVENT"
     })]
