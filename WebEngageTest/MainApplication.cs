@@ -1,10 +1,10 @@
 ﻿using System;
 using Android.App;
 using Android.Runtime;
-using Android.Util;
 using Firebase.Iid;
 
 using Com.Webengage.Sdk.Android;
+using Com.Webengage.Sdk.Android.Actions.Database;
 
 namespace WebEngageTest
 {
@@ -25,8 +25,10 @@ namespace WebEngageTest
             base.OnCreate();
 
             WebEngageConfig config = new WebEngageConfig.Builder()
-                                                        .SetWebEngageKey("YOUR-LICENSE-CODE")
+                                                        .SetWebEngageKey("~13410522d")
                                                         .SetDebugMode(true)
+                                                        .SetEventReportingStrategy(ReportingStrategy.Buffer)
+                                                        .SetLocationTrackingStrategy(LocationTrackingStrategy.AccuracyCity)
                                                         .Build();
             RegisterActivityLifecycleCallbacks(new WebEngageActivityLifeCycleCallbacks(this, config));
 

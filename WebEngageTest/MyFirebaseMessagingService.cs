@@ -20,7 +20,10 @@ namespace WebEngageTest
         {
             base.OnMessageReceived(message);
             Log.Debug("WebEngage", "Received push notification");
-            WebEngage.Get().Receive(message.Data);
+            IDictionary<string, string> data = message.Data;
+            if (data.ContainsKey("source") && "webengage".Equals(data["source"])) {
+                WebEngage.Get().Receive(data);
+            }
         }
     }
 }

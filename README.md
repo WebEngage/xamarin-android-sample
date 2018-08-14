@@ -41,7 +41,7 @@ using Com.Webengage.Sdk.Android;
 **Note:** Replace YOUR-LICENSE-CODE with your own license code.
 
 
-## Track Users
+## Tracking Users
 
 1. Login and logout users as shown below.
 
@@ -56,7 +56,7 @@ using Com.Webengage.Sdk.Android;
 	WebEngage.Get().User().Logout();
 ```
 
-2. Add system user attributes as shown below.
+2. Set system user attributes as shown below.
 
 ```csharp
 using Com.Webengage.Sdk.Android;
@@ -76,13 +76,13 @@ using Com.Webengage.Sdk.Android.Utils;
 	WebEngage.Get().User().SetGender(Gender.Male);
 
 	// Set user birth-date
-	WebEngage.Get().User().SetBirthDate("21-01-2001");
+	WebEngage.Get().User().SetBirthDate("1994-04-29");
 
 	// Set user company
 	WebEngage.Get().User().SetCompany("Google");
 ```
 
-3. Add custom user attributes as shown below.
+3. Set custom user attributes as shown below.
 
 ```csharp
 using Com.Webengage.Sdk.Android;
@@ -113,7 +113,7 @@ using Com.Webengage.Sdk.Android;
 ```
 
 
-## Track Events
+## Tracking Events
 
 Track custom events as shown below.
 
@@ -122,10 +122,10 @@ using Com.Webengage.Sdk.Android;
 using Java.Lang;
 ...
 	
-	// Track events
+	// Track simple event
 	WebEngage.Get().Analytics().Track(eventName);
 
-	// Track events with attributes
+	// Track event with attributes
 	IDictionary<string, Object> attributes = new Dictionary<string, Object>();
     attributes.Add("id", "~123");
     attributes.Add("price", 100);
@@ -139,7 +139,7 @@ using Java.Lang;
 **Note:** WebEngage SDK only supports the following data-types: string, Java.Lang.Boolean, Java.Util.Date, Java.Lang.Number, IList<Java.Lang.Object> and IDictionary<string, Java.Lang.Object>.
 
 
-## Track screens
+## Tracking Screens
 
 Track screen data as shown below.
 
@@ -235,7 +235,10 @@ using Com.Webengage.Sdk.Android;
         public override void OnMessageReceived(RemoteMessage message)
         {
             base.OnMessageReceived(message);
-            WebEngage.Get().Receive(message.Data);
+            IDictionary<string, string> data = message.Data;
+            if (data.ContainsKey("source") && "webengage".Equals(data["source"])) {
+                WebEngage.Get().Receive(data);
+            }
         }
     }
 

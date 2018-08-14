@@ -1,7 +1,6 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
-using Android.Util;
 
 using Com.Webengage.Sdk.Android;
 using Com.Webengage.Sdk.Android.Utils;
@@ -9,6 +8,9 @@ using Android.Content;
 using System.Collections.Generic;
 using Java.Lang;
 using Java.Util;
+
+using Com.Webengage.Sdk.Android.Actions.Database;
+using Android.Runtime;
 
 namespace WebEngageTest
 {
@@ -27,7 +29,7 @@ namespace WebEngageTest
             ISharedPreferences prefs = Application.Context.GetSharedPreferences("TEST_PREF", FileCreationMode.Private);
 
 
-            // User login
+            // Tracking Users
             EditText userIdEditText = FindViewById<EditText>(Resource.Id.userIdEditText);
             userId = prefs.GetString("userid", "");
             userIdEditText.Text = userId;
@@ -42,7 +44,6 @@ namespace WebEngageTest
 
             loginButton.Click += delegate {
                 if (loginButton.Text.Equals("LOGIN")) {
-                    // login
                     userId = userIdEditText.Text.ToString();
 
                     if (!userId.Equals(""))
@@ -53,10 +54,10 @@ namespace WebEngageTest
 
                         loginButton.Text = "LOGOUT";
 
+                        // Login
                         WebEngage.Get().User().Login(userId);
                     }
                 } else {
-                    // logout
                     ISharedPreferencesEditor editor = prefs.Edit();
                     editor.PutString("userid", "");
                     editor.Apply();
@@ -65,6 +66,7 @@ namespace WebEngageTest
 
                     userIdEditText.Text = "";
 
+                    // Logout
                     WebEngage.Get().User().Logout();
                 }
             };
@@ -104,16 +106,19 @@ namespace WebEngageTest
                 Toast.MakeText(this.BaseContext, "Gender set successfully", ToastLength.Long).Show();
             };
 
-            //WebEngage.Get().User().SetBirthDate("01-01-2001");
+            //WebEngage.Get().User().SetBirthDate("1994-04-29");
             //WebEngage.Get().User().SetFirstName("John");
             //WebEngage.Get().User().SetLastName("Doe");
             //WebEngage.Get().User().SetCompany("WebEngage");
+            //WebEngage.Get().User().SetPhoneNumber("+551155256325");
+            //WebEngage.Get().User().SetHashedPhoneNumber("e0ec043b3f9e198ec09041687e4d4e8d");
+            //WebEngage.Get().User().SetHashedEmail("144e0424883546e07dcd727057fd3b62");
 
 
             // Custom user attributes
             //WebEngage.Get().User().SetAttribute("age", (Java.Lang.Integer)23);
             //WebEngage.Get().User().SetAttribute("premium", (Boolean)true);
-            //WebEngage.Get().User().SetAttribute("last_seen", new Date("12-12-2019"));
+            //WebEngage.Get().User().SetAttribute("last_seen", new Date("2018-12-25"));
 
             //IDictionary<string, Object> customAttributes = new Dictionary<string, Object>();
             //customAttributes.Add("Twitter Email", "john.twitter@mail.com");
@@ -121,9 +126,11 @@ namespace WebEngageTest
             //WebEngage.Get().User().SetAttributes(customAttributes);
 
             //WebEngage.Get().User().DeleteAttribute("age");
+            //WebEngage.Get().SetLocationTrackingStrategy(LocationTrackingStrategy.AccuracyCity);
+            //WebEngage.Get().User().SetLocation(12.23, 12.45);
 
 
-            // Event
+            // Tracking Events
             EditText eventEditText = FindViewById<EditText>(Resource.Id.eventEditText);
 
             Button trackButton = FindViewById<Button>(Resource.Id.trackButton);
@@ -139,13 +146,58 @@ namespace WebEngageTest
 
                 Toast.MakeText(this.BaseContext, "Event tracked successfully", ToastLength.Long).Show();
             };
+
+            Button shopButton = FindViewById<Button>(Resource.Id.shopButton);
+            shopButton.Click += delegate
+            {
+                // Complex Events Tracking
+                IDictionary<string, Object> product1 = new JavaDictionary<string, Object>();
+                product1.Add("SKU Code", "UHUH799");
+                product1.Add("Product Name", "Armani Jeans");
+                product1.Add("Price", 300.49);
+
+                JavaDictionary<string, Object> detailsProduct1 = new JavaDictionary<string, Object>();
+                detailsProduct1.Add("Size", "L");
+                product1.Add("Details", detailsProduct1);
+
+                IDictionary<string, Object> product2 = new JavaDictionary<string, Object>();
+                product2.Add("SKU Code", "FBHG746");
+                product2.Add("Product Name", "Hugo Boss Jacket");
+                product2.Add("Price", 507.99);
+
+                JavaDictionary<string, Object> detailsProduct2 = new JavaDictionary<string, Object>();
+                detailsProduct2.Add("Size", "L");
+                product2.Add("Details", detailsProduct2);
+
+                IDictionary<string, Object> deliveryAddress = new JavaDictionary<string, Object>();
+                deliveryAddress.Add("City", "San Francisco");
+                deliveryAddress.Add("ZIP", "94121");
+
+                JavaDictionary<string, Object> orderPlacedAttributes = new JavaDictionary<string, Object>();
+                JavaList<Object> products = new JavaList<Object>();
+                products.Add(product1);
+                products.Add(product2);
+
+                JavaList<string> coupons = new JavaList<string>();
+                coupons.Add("BOGO17");
+
+                orderPlacedAttributes.Add("Products", products);
+                orderPlacedAttributes.Add("Delivery Address", deliveryAddress);
+                orderPlacedAttributes.Add("Coupons Applied", coupons);
+
+                WebEngage.Get().Analytics().Track("Order Placed", orderPlacedAttributes, new Analytics.Options().SetHighReportingPriority(false));
+
+                Toast.MakeText(this.BaseContext, "Order Placed successfully", ToastLength.Long).Show();
+            };
         }
 
         protected override void OnStart()
         {
             base.OnStart();
 
-            // Screen
+            WebEngage.Get().Analytics().Installed(new Intent());
+
+            // Tracking Screens
             IDictionary<string, Object> attributes = new Dictionary<string, Object>();
             attributes.Add("name", "Home");
             attributes.Add("launcher", true);
