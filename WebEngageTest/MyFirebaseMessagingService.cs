@@ -19,7 +19,6 @@ namespace WebEngageTest
         public override void OnMessageReceived(RemoteMessage message)
         {
             base.OnMessageReceived(message);
-            Log.Debug("WebEngage", "Received push notification");
             IDictionary<string, string> data = message.Data;
             if (data.ContainsKey("source") && "webengage".Equals(data["source"])) {
                 WebEngage.Get().Receive(data);

@@ -28,7 +28,7 @@ using Com.Webengage.Sdk.Android;
             base.OnCreate();
 
             WebEngageConfig config = new WebEngageConfig.Builder()
-                                                        .SetWebEngageKey("YOUR-LICENSE-CODE")
+                                                        .SetWebEngageKey(YOUR-LICENSE-CODE)
                                                         .SetDebugMode(true)
                                                         .Build();
             RegisterActivityLifecycleCallbacks(new WebEngageActivityLifeCycleCallbacks(this, config));
@@ -89,8 +89,8 @@ using Com.Webengage.Sdk.Android;
 using Java.Lang;
 ...
 
-	// Set custom user attribute
-	WebEngage.Get().User().SetAttribute("age", (Java.Lang.Integer)23);
+    // Set custom user attribute
+    WebEngage.Get().User().SetAttribute("age", (Java.Lang.Integer)23);
     WebEngage.Get().User().SetAttribute("premium", (Boolean)true);
 
     // Set complex custom user attributes
@@ -123,17 +123,17 @@ using Java.Lang;
 ...
 	
 	// Track simple event
-	WebEngage.Get().Analytics().Track(eventName);
+    WebEngage.Get().Analytics().Track("Searched");
 
 	// Track event with attributes
 	IDictionary<string, Object> attributes = new Dictionary<string, Object>();
     attributes.Add("id", "~123");
     attributes.Add("price", 100);
     attributes.Add("discount", true);
-    WebEngage.Get().Analytics().Track(eventName, attributes);
+    WebEngage.Get().Analytics().Track("Added to cart", attributes);
 
     // Track events with reporting priority
-    WebEngage.Get().Analytics().Track(eventName, attributes, new Analytics.Options().SetHighReportingPriority(true));
+    WebEngage.Get().Analytics().Track("Added to cart", attributes, new Analytics.Options().SetHighReportingPriority(true));
 ```
 
 **Note:** WebEngage SDK only supports the following data-types: string, Java.Lang.Boolean, Java.Util.Date, Java.Lang.Number, IList<Java.Lang.Object> and IDictionary<string, Java.Lang.Object>.
@@ -155,7 +155,7 @@ using Java.Lang;
         {
             base.OnStart();
 
-			// Track screen data
+	    // Track screen data
             IDictionary<string, Object> attributes = new Dictionary<string, Object>();
             attributes.Add("name", "Home");
             attributes.Add("launcher", true);
