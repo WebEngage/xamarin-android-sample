@@ -7,7 +7,7 @@ This is Xamarin Android sample application to demonstrate usage of Xamarin bindi
 
 1. Download [WebEngage Xamarin Android Library](https://s3-us-west-2.amazonaws.com/webengage-sdk/xamarin/android/0.1.0.0/WebEngageXamarinAndroid.dll).
 
-2. To consume this downloaded .DLL in your Xamarin.Android app, you must first add a reference to the Bindings Library by right-clicking on the References node of your project and select Add Reference.
+2. To consume this downloaded .DLL in your Xamarin.Android app, you must first add a reference to your Xamarin.Android project by right-clicking on the References node of your project and select Add Reference.
 
 
 ## Initialization
@@ -163,6 +163,7 @@ using Java.Lang;
             ...
         }
     }
+
 ```
 
 
@@ -218,6 +219,7 @@ using Com.Webengage.Sdk.Android;
             WebEngage.Get().SetRegistrationID(token);
         }
     }
+
 ```
 
 3. Send the notification message data to WebEngage from your FirebaseMessagingService class as shown below.
@@ -246,7 +248,152 @@ using Com.Webengage.Sdk.Android;
 
 4. Log in to your WebEngage dashboard and navigate to Integrations > Channels. Select Push tab and paste the your FCM/GCM server key under the field labeled “GCM/FCM Server Key” under Android section. Enter your application package name under the field labeled “Package Name” and click Save.
 
+### Push Notification Callbacks
+
+This is optional, but if you wish to receive push notification callbacks, then follow the below steps.
+
+1. Implement IPushNotificationCallbacks as shown below.
+
+```csharp
+using Android.Content;
+using Android.Util;
+using Com.Webengage.Sdk.Android.Actions.Render;
+using Com.Webengage.Sdk.Android.Callbacks;
+
+namespace YourNamespace
+{
+    public class YourPushNotificationCallbacks : Java.Lang.Object, IPushNotificationCallbacks
+    {
+        public YourPushNotificationCallbacks()
+        {
+        }
+
+        public bool OnPushNotificationActionClicked(Context p0, PushNotificationData p1, string p2)
+        {
+            ...
+            return false;
+        }
+
+        public bool OnPushNotificationClicked(Context p0, PushNotificationData p1)
+        {
+            ...
+            return false;
+        }
+
+        public void OnPushNotificationDismissed(Context p0, PushNotificationData p1)
+        {
+            ...
+        }
+
+        public PushNotificationData OnPushNotificationReceived(Context p0, PushNotificationData p1)
+        {
+            ...
+            return p1;
+        }
+
+        public void OnPushNotificationShown(Context p0, PushNotificationData p1)
+        {
+            ...
+        }
+    }
+}
+```
+
+2. Register IPushNotificationCallbacks implementation in your Application class as shown below.
+
+```csharp
+...
+using Com.Webengage.Sdk.Android;
+using Com.Webengage.Sdk.Android.Callbacks;
+...
+
+    [Application]
+    public class YourApplication : Application
+    {
+        ...
+
+        public override void OnCreate()
+        {
+            base.OnCreate();
+            ...
+
+            WebEngage.RegisterPushNotificationCallback(new YourPushNotificationCallbacks());
+        }
+    }
+}
+```
+
+
 
 ## In-app Notifications
 
 No additional integration steps are required for receiving in-app notifications. You can create in-app notifications by logging into your WebEngage Dashboard and navigate to In-app section.
+
+### In-app Notification Callbacks
+
+If you wish to receive in-app notification callbacks, then follow the below steps.
+
+1. Implement IInAppNotificationCallbacks as shown below.
+
+```csharp
+using Android.Content;
+using Android.Util;
+using Com.Webengage.Sdk.Android.Actions.Render;
+using Com.Webengage.Sdk.Android.Callbacks;
+
+namespace YourNamespace
+{
+    public class YourInAppNotificationCallbacks : Java.Lang.Object, IInAppNotificationCallbacks
+    {
+        public YourInAppNotificationCallbacks()
+        {
+        }
+
+        public bool OnInAppNotificationClicked(Context p0, InAppNotificationData p1, string p2)
+        {
+            ...
+            return false;
+        }
+
+        public void OnInAppNotificationDismissed(Context p0, InAppNotificationData p1)
+        {
+            ...
+        }
+
+        public InAppNotificationData OnInAppNotificationPrepared(Context p0, InAppNotificationData p1)
+        {
+            ...
+            return p1;
+        }
+
+        public void OnInAppNotificationShown(Context p0, InAppNotificationData p1)
+        {
+            ...
+        }
+    }
+}
+```
+
+2. Register IInAppNotificationCallbacks implementation in your Application class as shown below.
+
+```csharp
+...
+using Com.Webengage.Sdk.Android;
+using Com.Webengage.Sdk.Android.Callbacks;
+...
+
+    [Application]
+    public class YourApplication : Application
+    {
+        ...
+
+        public override void OnCreate()
+        {
+            base.OnCreate();
+            ...
+
+            WebEngage.RegisterInAppNotificationCallback(new YourInAppNotificationCallbacks());
+        }
+    }
+}
+```

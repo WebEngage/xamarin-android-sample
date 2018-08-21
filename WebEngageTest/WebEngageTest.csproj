@@ -112,6 +112,8 @@
     <Compile Include="MyFirebaseInstanceIdService.cs" />
     <Compile Include="MyFirebaseMessagingService.cs" />
     <Compile Include="InstallTrackerReceiver.cs" />
+    <Compile Include="MyPushNotificationCallbacks.cs" />
+    <Compile Include="MyInAppNotificationCallbacks.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

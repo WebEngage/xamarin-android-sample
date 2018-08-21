@@ -78,9 +78,10 @@ namespace WebEngageTest
             emailButton.Click += delegate
             {
                 string email = emailEditText.Text.ToString();
-                WebEngage.Get().User().SetEmail(email);
-
-                Toast.MakeText(this.ApplicationContext, "Email set successfully", ToastLength.Long).Show();
+                if (!email.Equals("")) {
+                    WebEngage.Get().User().SetEmail(email);
+                    Toast.MakeText(this.ApplicationContext, "Email set successfully", ToastLength.Long).Show();
+                }
             };
 
             Spinner genderSpinner = FindViewById<Spinner>(Resource.Id.genderSpinner);
@@ -129,6 +130,28 @@ namespace WebEngageTest
             //WebEngage.Get().SetLocationTrackingStrategy(LocationTrackingStrategy.AccuracyCity);
             //WebEngage.Get().User().SetLocation(12.23, 12.45);
 
+            //IList<Object> brandAffinity = new List<Object>
+            //{
+            //    "Hugo Boss",
+            //    "Armani Exchange",
+            //    "GAS",
+            //    "Brooks Brothers"
+            //};
+            //WebEngage.Get().User().SetAttribute("Brand affinity", brandAffinity);
+
+            //JavaDictionary<string, Object> address = new JavaDictionary<string, Object>
+            //{
+            //    { "Flat", "Z-62" },
+            //    { "Building", "Pennant Court" },
+            //    { "Locality", "Penn Road" },
+            //    { "City", "Wolverhampton" },
+            //    { "State", "West Midlands" },
+            //    { "PIN", "WV30DT" }
+            //};
+            //IDictionary<string, Object> customAttributes = new Dictionary<string, Object>();
+            //customAttributes.Add("Address", address);
+            //WebEngage.Get().User().SetAttributes(customAttributes);
+
 
             // Tracking Events
             EditText eventEditText = FindViewById<EditText>(Resource.Id.eventEditText);
@@ -136,21 +159,26 @@ namespace WebEngageTest
             Button trackButton = FindViewById<Button>(Resource.Id.trackButton);
             trackButton.Click += delegate
             {
-                string eventName = eventEditText.Text.ToString();
-
-                IDictionary<string, Object> attributes = new Dictionary<string, Object>();
-                attributes.Add("id", "~123");
-                attributes.Add("price", 100);
-                attributes.Add("discount", true);
-                WebEngage.Get().Analytics().Track(eventName, attributes, new Analytics.Options().SetHighReportingPriority(false));
-
-                Toast.MakeText(this.BaseContext, "Event tracked successfully", ToastLength.Long).Show();
+                string eventName = eventEditText.Text;
+                if (!eventName.Equals("")) {
+                    WebEngage.Get().Analytics().Track(eventName, new Analytics.Options().SetHighReportingPriority(false));
+                    Toast.MakeText(this.BaseContext, "Event tracked successfully", ToastLength.Long).Show();
+                }
             };
+
+            // Tracking Event with Attributes
+            //IDictionary<string, Object> attributes = new Dictionary<string, Object>
+            //{
+            //    { "id", "~123" },
+            //    { "price", 100 },
+            //    { "discount", true }
+            //};
+            //WebEngage.Get().Analytics().Track("Product Viewed", attributes, new Analytics.Options().SetHighReportingPriority(false));
 
             Button shopButton = FindViewById<Button>(Resource.Id.shopButton);
             shopButton.Click += delegate
             {
-                // Complex Events Tracking
+                // Tracking Complex Events
                 IDictionary<string, Object> product1 = new JavaDictionary<string, Object>();
                 product1.Add("SKU Code", "UHUH799");
                 product1.Add("Product Name", "Armani Jeans");
