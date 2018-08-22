@@ -1964,8 +1964,8 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c0031
 			public const int SYM = 2131492913;
 			
-			// aapt resource value: 0x7f0c008b
-			public const int action0 = 2131493003;
+			// aapt resource value: 0x7f0c008c
+			public const int action0 = 2131493004;
 			
 			// aapt resource value: 0x7f0c005f
 			public const int action_bar = 2131492959;
@@ -1988,17 +1988,17 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c003d
 			public const int action_bar_title = 2131492925;
 			
-			// aapt resource value: 0x7f0c0088
-			public const int action_container = 2131493000;
+			// aapt resource value: 0x7f0c0089
+			public const int action_container = 2131493001;
 			
 			// aapt resource value: 0x7f0c0060
 			public const int action_context_bar = 2131492960;
 			
-			// aapt resource value: 0x7f0c008f
-			public const int action_divider = 2131493007;
+			// aapt resource value: 0x7f0c0090
+			public const int action_divider = 2131493008;
 			
-			// aapt resource value: 0x7f0c0089
-			public const int action_image = 2131493001;
+			// aapt resource value: 0x7f0c008a
+			public const int action_image = 2131493002;
 			
 			// aapt resource value: 0x7f0c0002
 			public const int action_menu_divider = 2131492866;
@@ -2015,11 +2015,11 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c003f
 			public const int action_mode_close_button = 2131492927;
 			
-			// aapt resource value: 0x7f0c008a
-			public const int action_text = 2131493002;
+			// aapt resource value: 0x7f0c008b
+			public const int action_text = 2131493003;
 			
-			// aapt resource value: 0x7f0c0098
-			public const int actions = 2131493016;
+			// aapt resource value: 0x7f0c0099
+			public const int actions = 2131493017;
 			
 			// aapt resource value: 0x7f0c0040
 			public const int activity_chooser_view_content = 2131492928;
@@ -2057,8 +2057,8 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c0046
 			public const int buttonPanel = 2131492934;
 			
-			// aapt resource value: 0x7f0c008c
-			public const int cancel_action = 2131493004;
+			// aapt resource value: 0x7f0c008d
+			public const int cancel_action = 2131493005;
 			
 			// aapt resource value: 0x7f0c0079
 			public const int carousel_body_landscape = 2131492985;
@@ -2108,8 +2108,8 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c0056
 			public const int checkbox = 2131492950;
 			
-			// aapt resource value: 0x7f0c0094
-			public const int chronometer = 2131493012;
+			// aapt resource value: 0x7f0c0095
+			public const int chronometer = 2131493013;
 			
 			// aapt resource value: 0x7f0c0033
 			public const int collapseActionView = 2131492915;
@@ -2117,8 +2117,8 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c0049
 			public const int contentPanel = 2131492937;
 			
-			// aapt resource value: 0x7f0c00a0
-			public const int cta_layout = 2131493024;
+			// aapt resource value: 0x7f0c00a1
+			public const int cta_layout = 2131493025;
 			
 			// aapt resource value: 0x7f0c0050
 			public const int custom = 2131492944;
@@ -2126,23 +2126,23 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c004f
 			public const int customPanel = 2131492943;
 			
-			// aapt resource value: 0x7f0c00a1
-			public const int custom_base_container = 2131493025;
-			
-			// aapt resource value: 0x7f0c009b
-			public const int custom_container = 2131493019;
+			// aapt resource value: 0x7f0c00a2
+			public const int custom_base_container = 2131493026;
 			
 			// aapt resource value: 0x7f0c009c
-			public const int custom_head_container = 2131493020;
+			public const int custom_container = 2131493020;
 			
 			// aapt resource value: 0x7f0c009d
-			public const int custom_icon = 2131493021;
-			
-			// aapt resource value: 0x7f0c009f
-			public const int custom_message = 2131493023;
+			public const int custom_head_container = 2131493021;
 			
 			// aapt resource value: 0x7f0c009e
-			public const int custom_title = 2131493022;
+			public const int custom_icon = 2131493022;
+			
+			// aapt resource value: 0x7f0c00a0
+			public const int custom_message = 2131493024;
+			
+			// aapt resource value: 0x7f0c009f
+			public const int custom_title = 2131493023;
 			
 			// aapt resource value: 0x7f0c0016
 			public const int dark = 2131492886;
@@ -2168,8 +2168,8 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c002a
 			public const int end = 2131492906;
 			
-			// aapt resource value: 0x7f0c009a
-			public const int end_padder = 2131493018;
+			// aapt resource value: 0x7f0c009b
+			public const int end_padder = 2131493019;
 			
 			// aapt resource value: 0x7f0c0085
 			public const int eventEditText = 2131492997;
@@ -2198,8 +2198,8 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c0045
 			public const int icon = 2131492933;
 			
-			// aapt resource value: 0x7f0c0099
-			public const int icon_group = 2131493017;
+			// aapt resource value: 0x7f0c009a
+			public const int icon_group = 2131493018;
 			
 			// aapt resource value: 0x7f0c0012
 			public const int icon_only = 2131492882;
@@ -2210,8 +2210,8 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c0042
 			public const int image = 2131492930;
 			
-			// aapt resource value: 0x7f0c0095
-			public const int info = 2131493013;
+			// aapt resource value: 0x7f0c0096
+			public const int info = 2131493014;
 			
 			// aapt resource value: 0x7f0c003c
 			public const int italic = 2131492924;
@@ -2231,14 +2231,17 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c0044
 			public const int list_item = 2131492932;
 			
+			// aapt resource value: 0x7f0c0088
+			public const int locationButton = 2131493000;
+			
 			// aapt resource value: 0x7f0c0080
 			public const int loginButton = 2131492992;
 			
-			// aapt resource value: 0x7f0c008e
-			public const int media_actions = 2131493006;
+			// aapt resource value: 0x7f0c008f
+			public const int media_actions = 2131493007;
 			
-			// aapt resource value: 0x7f0c00b5
-			public const int message = 2131493045;
+			// aapt resource value: 0x7f0c00b6
+			public const int message = 2131493046;
 			
 			// aapt resource value: 0x7f0c002b
 			public const int middle = 2131492907;
@@ -2258,14 +2261,14 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c0019
 			public const int normal = 2131492889;
 			
-			// aapt resource value: 0x7f0c0097
-			public const int notification_background = 2131493015;
+			// aapt resource value: 0x7f0c0098
+			public const int notification_background = 2131493016;
+			
+			// aapt resource value: 0x7f0c0092
+			public const int notification_main_column = 2131493010;
 			
 			// aapt resource value: 0x7f0c0091
-			public const int notification_main_column = 2131493009;
-			
-			// aapt resource value: 0x7f0c0090
-			public const int notification_main_column_container = 2131493008;
+			public const int notification_main_column_container = 2131493009;
 			
 			// aapt resource value: 0x7f0c0048
 			public const int parentPanel = 2131492936;
@@ -2282,68 +2285,68 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c0058
 			public const int radio = 2131492952;
 			
-			// aapt resource value: 0x7f0c00a2
-			public const int rating_v1_body = 2131493026;
-			
 			// aapt resource value: 0x7f0c00a3
-			public const int rating_v1_frame = 2131493027;
-			
-			// aapt resource value: 0x7f0c00a5
-			public const int rating_v1_icon = 2131493029;
+			public const int rating_v1_body = 2131493027;
 			
 			// aapt resource value: 0x7f0c00a4
-			public const int rating_v1_image = 2131493028;
-			
-			// aapt resource value: 0x7f0c00a7
-			public const int rating_v1_message = 2131493031;
-			
-			// aapt resource value: 0x7f0c00a9
-			public const int rating_v1_star1 = 2131493033;
-			
-			// aapt resource value: 0x7f0c00b2
-			public const int rating_v1_star10 = 2131493042;
-			
-			// aapt resource value: 0x7f0c00aa
-			public const int rating_v1_star2 = 2131493034;
-			
-			// aapt resource value: 0x7f0c00ab
-			public const int rating_v1_star3 = 2131493035;
-			
-			// aapt resource value: 0x7f0c00ac
-			public const int rating_v1_star4 = 2131493036;
-			
-			// aapt resource value: 0x7f0c00ad
-			public const int rating_v1_star5 = 2131493037;
-			
-			// aapt resource value: 0x7f0c00ae
-			public const int rating_v1_star6 = 2131493038;
-			
-			// aapt resource value: 0x7f0c00af
-			public const int rating_v1_star7 = 2131493039;
-			
-			// aapt resource value: 0x7f0c00b0
-			public const int rating_v1_star8 = 2131493040;
-			
-			// aapt resource value: 0x7f0c00b1
-			public const int rating_v1_star9 = 2131493041;
-			
-			// aapt resource value: 0x7f0c00a8
-			public const int rating_v1_star_body = 2131493032;
-			
-			// aapt resource value: 0x7f0c00b4
-			public const int rating_v1_submit = 2131493044;
-			
-			// aapt resource value: 0x7f0c00b3
-			public const int rating_v1_submit_margin = 2131493043;
+			public const int rating_v1_frame = 2131493028;
 			
 			// aapt resource value: 0x7f0c00a6
-			public const int rating_v1_title = 2131493030;
+			public const int rating_v1_icon = 2131493030;
 			
-			// aapt resource value: 0x7f0c0096
-			public const int right_icon = 2131493014;
+			// aapt resource value: 0x7f0c00a5
+			public const int rating_v1_image = 2131493029;
 			
-			// aapt resource value: 0x7f0c0092
-			public const int right_side = 2131493010;
+			// aapt resource value: 0x7f0c00a8
+			public const int rating_v1_message = 2131493032;
+			
+			// aapt resource value: 0x7f0c00aa
+			public const int rating_v1_star1 = 2131493034;
+			
+			// aapt resource value: 0x7f0c00b3
+			public const int rating_v1_star10 = 2131493043;
+			
+			// aapt resource value: 0x7f0c00ab
+			public const int rating_v1_star2 = 2131493035;
+			
+			// aapt resource value: 0x7f0c00ac
+			public const int rating_v1_star3 = 2131493036;
+			
+			// aapt resource value: 0x7f0c00ad
+			public const int rating_v1_star4 = 2131493037;
+			
+			// aapt resource value: 0x7f0c00ae
+			public const int rating_v1_star5 = 2131493038;
+			
+			// aapt resource value: 0x7f0c00af
+			public const int rating_v1_star6 = 2131493039;
+			
+			// aapt resource value: 0x7f0c00b0
+			public const int rating_v1_star7 = 2131493040;
+			
+			// aapt resource value: 0x7f0c00b1
+			public const int rating_v1_star8 = 2131493041;
+			
+			// aapt resource value: 0x7f0c00b2
+			public const int rating_v1_star9 = 2131493042;
+			
+			// aapt resource value: 0x7f0c00a9
+			public const int rating_v1_star_body = 2131493033;
+			
+			// aapt resource value: 0x7f0c00b5
+			public const int rating_v1_submit = 2131493045;
+			
+			// aapt resource value: 0x7f0c00b4
+			public const int rating_v1_submit_margin = 2131493044;
+			
+			// aapt resource value: 0x7f0c00a7
+			public const int rating_v1_title = 2131493031;
+			
+			// aapt resource value: 0x7f0c0097
+			public const int right_icon = 2131493015;
+			
+			// aapt resource value: 0x7f0c0093
+			public const int right_side = 2131493011;
 			
 			// aapt resource value: 0x7f0c0023
 			public const int screen = 2131492899;
@@ -2423,8 +2426,8 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c0013
 			public const int standard = 2131492883;
 			
-			// aapt resource value: 0x7f0c008d
-			public const int status_bar_latest_event_content = 2131493005;
+			// aapt resource value: 0x7f0c008e
+			public const int status_bar_latest_event_content = 2131493006;
 			
 			// aapt resource value: 0x7f0c0059
 			public const int submenuarrow = 2131492953;
@@ -2450,8 +2453,8 @@ namespace WebEngageTest
 			// aapt resource value: 0x7f0c004c
 			public const int textSpacerNoTitle = 2131492940;
 			
-			// aapt resource value: 0x7f0c0093
-			public const int time = 2131493011;
+			// aapt resource value: 0x7f0c0094
+			public const int time = 2131493012;
 			
 			// aapt resource value: 0x7f0c000e
 			public const int title = 2131492878;

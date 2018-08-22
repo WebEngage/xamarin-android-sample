@@ -11,6 +11,11 @@ using Java.Util;
 
 using Com.Webengage.Sdk.Android.Actions.Database;
 using Android.Runtime;
+using Android.Content.PM;
+using Android.Util;
+using Android.Support.V4.App;
+using Android.Support.V4.Content;
+using Android;
 
 namespace WebEngageTest
 {
@@ -36,14 +41,19 @@ namespace WebEngageTest
 
             Button loginButton = FindViewById<Button>(Resource.Id.loginButton);
 
-            if (userId.Equals("")) {
+            if (userId.Equals(""))
+            {
                 loginButton.Text = "LOGIN";
-            } else {
+            }
+            else
+            {
                 loginButton.Text = "LOGOUT";
             }
 
-            loginButton.Click += delegate {
-                if (loginButton.Text.Equals("LOGIN")) {
+            loginButton.Click += delegate
+            {
+                if (loginButton.Text.Equals("LOGIN"))
+                {
                     userId = userIdEditText.Text.ToString();
 
                     if (!userId.Equals(""))
@@ -57,7 +67,9 @@ namespace WebEngageTest
                         // Login
                         WebEngage.Get().User().Login(userId);
                     }
-                } else {
+                }
+                else
+                {
                     ISharedPreferencesEditor editor = prefs.Edit();
                     editor.PutString("userid", "");
                     editor.Apply();
@@ -78,7 +90,8 @@ namespace WebEngageTest
             emailButton.Click += delegate
             {
                 string email = emailEditText.Text.ToString();
-                if (!email.Equals("")) {
+                if (!email.Equals(""))
+                {
                     WebEngage.Get().User().SetEmail(email);
                     Toast.MakeText(this.ApplicationContext, "Email set successfully", ToastLength.Long).Show();
                 }
@@ -95,11 +108,16 @@ namespace WebEngageTest
             {
                 int spinnerPosition = genderSpinner.SelectedItemPosition;
                 Gender gender = Gender.Male;
-                if (spinnerPosition == 0) {
+                if (spinnerPosition == 0)
+                {
                     gender = Gender.Male;
-                } else if (spinnerPosition == 1) {
+                }
+                else if (spinnerPosition == 1)
+                {
                     gender = Gender.Female;
-                } else if (spinnerPosition == 2) {
+                }
+                else if (spinnerPosition == 2)
+                {
                     gender = Gender.Other;
                 }
                 WebEngage.Get().User().SetGender(gender);
@@ -160,7 +178,8 @@ namespace WebEngageTest
             trackButton.Click += delegate
             {
                 string eventName = eventEditText.Text;
-                if (!eventName.Equals("")) {
+                if (!eventName.Equals(""))
+                {
                     WebEngage.Get().Analytics().Track(eventName, new Analytics.Options().SetHighReportingPriority(false));
                     Toast.MakeText(this.BaseContext, "Event tracked successfully", ToastLength.Long).Show();
                 }
@@ -217,6 +236,12 @@ namespace WebEngageTest
 
                 Toast.MakeText(this.BaseContext, "Order Placed successfully", ToastLength.Long).Show();
             };
+
+            Button locationButton = FindViewById<Button>(Resource.Id.locationButton);
+            locationButton.Click += delegate
+            {
+                requestLocationPermission();
+            };
         }
 
         protected override void OnStart()
@@ -230,6 +255,48 @@ namespace WebEngageTest
             attributes.Add("name", "Home");
             attributes.Add("launcher", true);
             WebEngage.Get().Analytics().ScreenNavigated("Home", attributes);
+        }
+
+        // Request location permission
+        readonly string[] PermissionsList = {
+            Manifest.Permission.AccessFineLocation
+        };
+
+        const int RequestLocationId = 100;
+
+        private void requestLocationPermission()
+        {
+            if ((int)Build.VERSION.SdkInt < 23)
+            {
+                return;
+            }
+
+            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.AccessFineLocation) == (int)Permission.Granted)
+            {
+                Log.Debug("WebEngageTest", "Location permission already granted");
+                return;
+            }
+
+            ActivityCompat.RequestPermissions(this, PermissionsList, RequestLocationId);
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            switch (requestCode)
+            {
+                case RequestLocationId:
+                    {
+                        if (grantResults.Length > 0 && grantResults[0] == Permission.Granted)
+                        {
+                            Log.Debug("WebEngageTest", "location permission granted");
+                        }
+                        else
+                        {
+                            Log.Debug("WebEngageTest", "location permission denied");
+                        }
+                    }
+                    break;
+            }
         }
     }
 }
