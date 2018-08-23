@@ -248,8 +248,6 @@ namespace WebEngageTest
         {
             base.OnStart();
 
-            WebEngage.Get().Analytics().Installed(new Intent());
-
             // Tracking Screens
             IDictionary<string, Object> attributes = new Dictionary<string, Object>();
             attributes.Add("name", "Home");
