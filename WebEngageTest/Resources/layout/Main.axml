@@ -77,5 +77,14 @@
             android:background="#DDDDDD"
             android:text="LOCATION"
             android:layout_marginBottom="25dp" />
+        
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#DDDDDD"
+            android:text="NEXT"
+            android:layout_marginBottom="25dp" />
+        
     </LinearLayout>
 </ScrollView>

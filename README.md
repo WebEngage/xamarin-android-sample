@@ -139,34 +139,6 @@ using Java.Lang;
 **Note:** WebEngage SDK only supports the following data-types: string, Java.Lang.Boolean, Java.Util.Date, Java.Lang.Number, IList<Java.Lang.Object> and IDictionary<string, Java.Lang.Object>.
 
 
-## Tracking Screens
-
-Track screen data as shown below.
-
-```csharp
-using Com.Webengage.Sdk.Android;
-using Java.Lang;
-...
-
-    public class YourActivity : Activity
-    {
-    	...
-    	protected override void OnStart()
-        {
-            base.OnStart();
-
-	    // Track screen data
-            IDictionary<string, Object> attributes = new Dictionary<string, Object>();
-            attributes.Add("name", "Home");
-            attributes.Add("launcher", true);
-            WebEngage.Get().Analytics().ScreenNavigated("Home", attributes);
-            ...
-        }
-    }
-
-```
-
-
 ## Push Notifications
 
 1. Integrate Xamarin.Firebase.Messaging Nuget package with your Xamarin.Android app
@@ -328,6 +300,35 @@ using Com.Webengage.Sdk.Android.Callbacks;
 ## In-app Notifications
 
 No additional integration steps are required for receiving in-app notifications. You can create in-app notifications by logging into your WebEngage Dashboard and navigate to In-app section.
+
+### Tracking Screens
+
+Screens can be tracked to set rules for showing in-app notifications. For example, you can create a rule in WebEngage dashboard to show in-app notification on a particular screen.
+
+Track screen and screen data as shown below.
+
+```csharp
+using Com.Webengage.Sdk.Android;
+using Java.Lang;
+...
+
+    public class YourActivity : Activity
+    {
+        ...
+        protected override void OnStart()
+        {
+            base.OnStart();
+
+            // Track screen data
+            IDictionary<string, Object> attributes = new Dictionary<string, Object>();
+            attributes.Add("name", "Home");
+            attributes.Add("launcher", true);
+            WebEngage.Get().Analytics().ScreenNavigated("Home", attributes);
+            ...
+        }
+    }
+
+```
 
 ### In-app Notification Callbacks
 

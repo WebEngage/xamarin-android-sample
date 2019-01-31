@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>WebEngageTest</RootNamespace>
     <AssemblyName>WebEngageTest</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -120,6 +120,8 @@
     <Compile Include="MyPushNotificationCallbacks.cs" />
     <Compile Include="MyInAppNotificationCallbacks.cs" />
     <Compile Include="DeeplinkActivity.cs" />
+    <Compile Include="MyLifecycleCallbacks.cs" />
+    <Compile Include="NextActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -141,6 +143,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\values\Styles.xml" />
     <AndroidResource Include="Resources\layout\Deeplink.axml" />
+    <AndroidResource Include="Resources\layout\Next.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -242,6 +242,12 @@ namespace WebEngageTest
             {
                 requestLocationPermission();
             };
+
+            Button nextButton = FindViewById<Button>(Resource.Id.nextButton);
+            nextButton.Click += delegate
+            {
+                StartActivity(typeof(NextActivity));
+            };
         }
 
         protected override void OnStart()
