@@ -5,7 +5,7 @@ This is Xamarin Android sample application to demonstrate usage of Xamarin bindi
 
 ## Installation
 
-1. Download [WebEngage Xamarin Android Library (v0.1.1.0)](https://s3-us-west-2.amazonaws.com/webengage-sdk/xamarin/android/0.1.1.0/WebEngageXamarinAndroid.dll).
+1. Download [WebEngage Xamarin Android Library (v0.2.0.0)](https://s3-us-west-2.amazonaws.com/webengage-sdk/xamarin/android/0.2.0.0/WebEngageXamarinAndroid.dll).
 
 2. To consume this downloaded .DLL in your Xamarin.Android app, you must first add a reference to your Xamarin.Android project by right-clicking on the References node of your project and select Add Reference.
 
