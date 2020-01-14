@@ -133,6 +133,12 @@ namespace WebEngageTest
             //WebEngage.Get().User().SetHashedPhoneNumber("e0ec043b3f9e198ec09041687e4d4e8d");
             //WebEngage.Get().User().SetHashedEmail("144e0424883546e07dcd727057fd3b62");
 
+            // Channels
+            //WebEngage.Get().User().SetOptIn(Channel.Whatsapp, true);
+            //WebEngage.Get().User().SetOptIn(Channel.Email, true);
+            //WebEngage.Get().User().SetOptIn(Channel.Sms, true);
+            //WebEngage.Get().User().SetOptIn(Channel.Push, true);
+            //WebEngage.Get().User().SetOptIn(Channel.InApp, true);
 
             // Custom user attributes
             //WebEngage.Get().User().SetAttribute("age", (Java.Lang.Integer)23);
