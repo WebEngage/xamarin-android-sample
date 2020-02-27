@@ -1,3 +1,4 @@
+
 # WebEngage Xamarin Android Sample
 
 This is Xamarin Android sample application to demonstrate usage of Xamarin binding library of WebEngage Android SDK.
@@ -5,7 +6,7 @@ This is Xamarin Android sample application to demonstrate usage of Xamarin bindi
 
 ## Installation
 
-1. Download [WebEngage Xamarin Android Library (v0.3.0.0)](https://s3-us-west-2.amazonaws.com/webengage-sdk/xamarin/android/0.3.0.0/WebEngageXamarinAndroid.dll).
+1. Download [WebEngage Xamarin Android Library (v0.4.0.0)](https://s3-us-west-2.amazonaws.com/webengage-sdk/xamarin/android/0.4.0.0/WebEngageXamarinAndroid.dll).
 
 2. To consume this downloaded .DLL in your Xamarin.Android app, you must first add a reference to your Xamarin.Android project by right-clicking on the References node of your project and select Add Reference.
 
@@ -39,6 +40,19 @@ using Com.Webengage.Sdk.Android;
 ```
 
 **Note:** Replace YOUR-LICENSE-CODE with your own license code.
+
+
+## Attribution Tracking
+
+In order to track 'App Installed' events and install-referrer URLs, follow the steps below.
+
+1. Make sure that you are using WebEngage Xamarin Android Library version 0.4.0.0 or above.
+
+2. Download the latest version of [Android Install Referrer library](https://mvnrepository.com/artifact/com.android.installreferrer/installreferrer).
+
+3. Add the aar file to your Xamarin.Android project, for example at location `YourProject/lib/installreferrer-1.1.1.aar`.
+
+4. Set Build Action for the installreferrer aar to AndroidAarLibrary.
 
 
 ## Tracking Users
